@@ -6,20 +6,35 @@ const commentSchema = new Schema({
 }, { timestamps: true });
 
 const postSchema = new Schema({
-    post: String,
+    userId: {
+        type: String,
+        required: true
+    },
+    post: {
+        type: String,
+        required: true
+    },
     comments: [commentSchema]
 }, { timestamps: true });
 
-const followSchema = new Schema ({
-    fullName: String,
-    email: String,
-    following: Boolean,
-})
 
 const userSchema = new Schema({
-    fullName: String,
-    email: String,
-    follows: [followSchema]
+    userName: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    followers: {
+        type: Array,
+        default: []
+    },
+    following: {
+        type: Array,
+        default: []
+    },
 }, { timestamps: true })
 
 

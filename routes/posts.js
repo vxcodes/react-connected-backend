@@ -5,12 +5,11 @@ const postsCtrl = require('../controllers/posts');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.send('Here are your posts');
-});
 
 
+router.get('/', postsCtrl.index);
 router.post('/', postsCtrl.create);
-
+// router.put(':/id', postsCtrl.update);
+// router.delete(':/id', postsCtrl.delete);
 
 module.exports = router;
