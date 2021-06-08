@@ -5,8 +5,8 @@ var Post = require('../models/post');
 module.exports = {
     index,
     create,
-    // update,
-    // delete: deletePost
+    update,
+    delete: deletePost
 }
 
 function index(req, res) {
@@ -21,14 +21,14 @@ function create(req, res) {
     });
 }
 
-// function update(req, res) {
-//     Post.findByIdAndUpdate(req.params.id, function() {
-//         index(req, res)
-//     })
-// }
+function update(req, res) {
+    Post.findByIdAndUpdate(req.params.id, function() {
+        index(req, res)
+    })
+}
 
-// function deletePost(req, res) {
-//     Post.findByIdAndDelete(req.params.id, function() {
-//         index(req, res)
-//     });
-// }
+function deletePost(req, res) {
+    Post.findByIdAndDelete(req.params.id, function() {
+        index(req, res)
+    });
+}
