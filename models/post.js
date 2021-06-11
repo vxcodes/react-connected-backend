@@ -6,12 +6,7 @@ const commentSchema = new Schema({
 }, { timestamps: true });
 
 const postSchema = new Schema({
-    // userName: {
-    //     type: String,
-    // },
-    // title: {
-    //     type: String,
-    // },
+
     post: {
         type: String,
     },
