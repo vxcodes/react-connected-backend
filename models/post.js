@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
-    content: String,
+    comment: String,
 }, { timestamps: true });
 
 const postSchema = new Schema({
